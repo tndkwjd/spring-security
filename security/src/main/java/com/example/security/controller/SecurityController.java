@@ -28,7 +28,6 @@ public class SecurityController {
 	@GetMapping("/test/login")
 	public @ResponseBody String testLogin(Authentication authentication,
 			@AuthenticationPrincipal PrincipalDetails userDetails) {
-		System.out.println("/test/login @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2");
 		PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
 		System.out.println("authentication" + principalDetails.getUser());
 
@@ -39,7 +38,6 @@ public class SecurityController {
 	@GetMapping("/test/oauth/login")
 	public @ResponseBody String testOauthLogin(Authentication authentication,
 			@AuthenticationPrincipal OAuth2User oauth) {
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@ /test/oauth/login");
 		OAuth2User oauth2User = (OAuth2User) authentication.getPrincipal();
 		System.out.println("authentication" + oauth2User.getAttributes());
 
